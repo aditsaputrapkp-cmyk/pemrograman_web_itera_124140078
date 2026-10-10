@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mini POS kantin kampus: input barang, keranjang belanja, diskon otomatis, dan kembalian.">
+  <title>Kantin Kampus — Mini POS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">K</span><div><strong>Kantin Kampus</strong><span>MINI POS</span></div></div>
+    <span class="header-note">Adit Saputra · 124140078 · RA</span>
+  </header>
+
+  <main class="app">
+    <section class="page-heading">
+      <div><p class="eyebrow">TRANSAKSI KANTIN</p><h1>Catat belanja, hitung otomatis.</h1><p>Tambahkan barang dan cek pembayaran dalam satu halaman.</p></div>
+      <button type="button" class="button button-outline" id="reset-button"><span aria-hidden="true">↻</span> Transaksi Baru / Reset</button>
+    </section>
+
+    <div id="storage-message" class="notice notice-error" role="alert" hidden></div>
+    <div id="transaction-message" class="notice" role="status" aria-live="polite" hidden></div>
+
+    <div class="workspace">
+      <div class="left-column">
+        <section class="panel" aria-labelledby="form-heading">
+          <div class="panel-heading"><div><p class="eyebrow">01 / INPUT BARANG</p><h2 id="form-heading">Tambah ke keranjang</h2></div><span class="tag">Barang baru</span></div>
+          <form id="item-form" novalidate>
+            <div class="field">
+              <label for="item-name">Nama Barang <span aria-hidden="true">*</span></label>
+              <input id="item-name" name="nama" type="text" placeholder="Contoh: Buku Tulis" autocomplete="off" required minlength="3" aria-describedby="name-help name-error">
+              <small id="name-help">Minimal 3 karakter.</small>
+              <p id="name-error" class="field-error" aria-live="polite"></p>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="item-price">Harga Satuan <span aria-hidden="true">*</span></label>
+                <div class="input-prefix"><span aria-hidden="true">Rp</span><input id="item-price" name="harga" type="number" placeholder="5000" min="500" step="any" required aria-describedby="price-help price-error"></div>
+                <small id="price-help">Angka positif, minimal Rp500.</small>
+                <p id="price-error" class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="item-qty">Jumlah / Qty <span aria-hidden="true">*</span></label>
+                <input id="item-qty" name="qty" type="number" placeholder="1" min="1" step="1" required aria-describedby="qty-help qty-error">
+                <small id="qty-help">Bilangan bulat, minimal 1.</small>
+                <p id="qty-error" class="field-error" aria-live="polite"></p>
+              </div>
+            </div>
+            <button type="submit" class="button button-primary"><span aria-hidden="true">+</span> Tambah Barang</button>
+          </form>
+        </section>
+
+        <section class="panel cart-panel" aria-labelledby="cart-heading">
+          <div class="panel-heading"><div><p class="eyebrow">02 / DAFTAR BELANJA</p><h2 id="cart-heading">Keranjang belanja</h2></div><span class="tag" id="cart-count">0 barang · 0 unit</span></div>
+          <div class="table-container">
+            <table>
+              <caption class="sr-only">Barang dalam transaksi berjalan</caption>
+              <thead><tr><th scope="col">No</th><th scope="col">Nama Barang</th><th scope="col" class="number-cell">Harga Satuan</th><th scope="col" class="number-cell">Qty</th><th scope="col" class="number-cell">Subtotal</th><th scope="col">Aksi</th></tr></thead>
+              <tbody id="cart-body"></tbody>
+            </table>
+          </div>
+          <div id="empty-state" class="empty-state"><span class="empty-icon" aria-hidden="true">+</span><h3>Keranjang masih kosong</h3><p>Isi form di atas untuk menambahkan barang pertama.</p></div>
+          <div class="cart-footnote"><span class="status-dot" aria-hidden="true"></span><span id="storage-status">Keranjang tersimpan otomatis di browser.</span></div>
+        </section>
+      </div>
+
+      <section class="panel checkout" aria-labelledby="checkout-heading">
+        <div class="panel-heading"><div><p class="eyebrow">03 / PEMBAYARAN</p><h2 id="checkout-heading">Ringkasan transaksi</h2></div></div>
+        <div class="promotion"><span class="promotion-symbol" aria-hidden="true">%</span><div><strong>Diskon otomatis 10%</strong><p>Untuk total belanja minimal Rp50.000.</p></div></div>
+        <dl class="totals">
+          <div><dt>Total Belanja</dt><dd id="subtotal-value">Rp0</dd></div>
+          <div class="discount-row"><dt>Diskon <span id="discount-label">(0%)</span></dt><dd id="discount-value">− Rp0</dd></div>
+        </dl>
+        <p class="discount-note" id="discount-note">Tambahkan barang untuk memulai transaksi.</p>
+        <div class="grand-total"><span>Total Akhir</span><strong id="total-value" aria-live="polite">Rp0</strong></div>
+        <div class="field payment-field">
+          <label for="payment-input">Uang Bayar</label>
+          <div class="input-prefix"><span aria-hidden="true">Rp</span><input id="payment-input" type="number" min="0" step="any" placeholder="Masukkan uang diterima" aria-describedby="payment-help payment-error"></div>
+          <small id="payment-help">Kembalian dihitung saat nominal diisi.</small>
+          <p id="payment-error" class="field-error" aria-live="polite"></p>
+        </div>
+        <div class="change-box"><span>Kembalian</span><strong id="change-value">—</strong></div>
+        <p id="payment-status" class="payment-status" role="status" aria-live="polite">Tambahkan barang terlebih dahulu.</p>
+      </section>
+    </div>
+    <footer class="footer"><span>Mini POS · Praktikum Pengembangan Aplikasi Web</span><span>JavaScript Dasar / Pertemuan 1</span></footer>
+  </main>
+
+  <dialog id="reset-dialog" aria-labelledby="reset-heading" aria-describedby="reset-description">
+    <h2 id="reset-heading">Mulai transaksi baru?</h2>
+    <p id="reset-description">Seluruh barang di keranjang dan nominal pembayaran akan dikosongkan.</p>
+    <div class="dialog-actions"><button class="button button-outline" id="cancel-reset" type="button">Batal</button><button class="button button-primary" id="confirm-reset" type="button">Ya, Kosongkan</button></div>
+  </dialog>
+</body>
+</html>
