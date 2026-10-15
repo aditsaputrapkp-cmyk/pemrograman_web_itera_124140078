@@ -1,0 +1,14 @@
+[
+  { "id": 1, "userId": 1, "title": "Pelajari let dan const", "completed": true },
+  { "id": 2, "userId": 1, "title": "Buat arrow function JavaScript", "completed": false },
+  { "id": 3, "userId": 2, "title": "Latihan template literals", "completed": false },
+  { "id": 4, "userId": 3, "title": "Catat tugas kuliah", "completed": false },
+  { "id": 5, "userId": 1, "title": "Baca modul jaringan komputer", "completed": false },
+  { "id": 6, "userId": 2, "title": "Gunakan destructuring pada objek", "completed": true },
+  { "id": 7, "userId": 3, "title": "Praktik class JavaScript", "completed": false },
+  { "id": 8, "userId": 1, "title": "Kerjakan tugas Personal Dashboard", "completed": false },
+  { "id": 9, "userId": 2, "title": "Coba fetch dan async await", "completed": false },
+  { "id": 10, "userId": 3, "title": "Rangkum array methods", "completed": false },
+  { "id": 11, "userId": 1, "title": "Uji penyimpanan localStorage", "completed": false },
+  { "id": 12, "userId": 2, "title": "Lengkapi dokumentasi tugas", "completed": false }
+]

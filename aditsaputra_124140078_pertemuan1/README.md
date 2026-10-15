@@ -137,6 +137,3 @@ Transaksi baru menggunakan `localStorage.removeItem("miniPosKeranjang")`. Nomina
 ## Pengumpulan
 
 Buat repository GitHub **Public** bernama `pemrograman_web_itera_124140078`, lalu unggah folder `aditsaputra_124140078_pertemuan1` beserta isinya langsung ke root repository. Sertakan folder `screenshots/` yang berisi empat gambar dokumentasi di atas. Pastikan identitas dan seluruh file sudah lengkap sebelum mengirim URL repository melalui formulir kelas **RA**.
-#   p e m r o g r a m a n _ w e b _ i t e r a _ 1 2 4 1 4 0 0 7 8  
- #   p e m r o g r a m a n _ w e b _ i t e r a _ 1 2 4 1 4 0 0 7 8  
- 

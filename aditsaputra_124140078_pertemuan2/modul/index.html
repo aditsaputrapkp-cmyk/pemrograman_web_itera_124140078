@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f4ec">
+  <title>Lab ES6+ · Ruang Kuliah</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Langsung ke isi praktikum</a>
+  <div class="page-shell">
+    <header class="masthead">
+      <a class="brand" href="../index.html" aria-label="Ruang Kuliah, kembali ke dashboard">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h13a1 1 0 0 1 1 1v17H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3M3 18a3 3 0 0 1 3-3h13M8 7h7M8 11h5"/></svg></span>
+        <span>ruang kuliah<span class="brand-dot">.</span><small>AGENDA MAHASISWA</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Navigasi utama"><a href="../index.html">Agenda tugas</a><a href="index.html" aria-current="page">Lab ES6+</a></nav>
+      <p class="student"><strong>Adit Saputra</strong><span>124140078 · Kelas RA</span></p>
+    </header>
+    <main id="main-content">
+      <div class="page-title">
+        <div><p class="eyebrow">PENGEMBANGAN APLIKASI WEB / PERTEMUAN 02</p><h1>Catatan laboratorium<span>.</span></h1><p class="page-description">Jalankan contoh, baca hasilnya, lalu pelajari cara kerja JavaScript ES6+.</p></div>
+        <div class="lab-index"><strong>02</strong><span>JAVASCRIPT NEXT GEN<br>12 demo · 22 latihan mandiri</span></div>
+      </div>
+      <nav class="section-nav" aria-label="Bagian praktikum"><a href="#demo"><span>01</span> Demo materi <small>12 topik</small></a><a href="#latihan"><span>02</span> Latihan dasar <small>No. 1–16</small></a><a href="#async"><span>03</span> Latihan asinkron <small>No. 17–22</small></a></nav>
+      <section id="demo" class="section" aria-labelledby="demo-heading">
+        <div class="section-heading"><div class="section-copy"><span class="number">BAGIAN 01 / MEMAHAMI MATERI</span><h2 id="demo-heading">Dua belas contoh, satu per satu.</h2><p>Variabel, fungsi, objek, array, Promise, dan async/await mengikuti urutan materi.</p></div><div class="actions"><button type="button" id="runBtn" class="primary">Jalankan 12 demo</button><button type="button" id="clearBtn" class="secondary">Bersihkan</button></div></div>
+        <p id="demo-status" class="status" role="status">Output akan muncul setelah tombol dijalankan.</p>
+        <div class="output-caption" aria-hidden="true"><span>TOPIK & CATATAN</span><span>HASIL EKSEKUSI</span></div>
+        <div id="output" class="output-list" aria-label="Hasil dua belas demo materi"></div>
+      </section>
+      <section id="latihan" class="section" aria-labelledby="exercise-heading">
+        <div class="section-heading"><div class="section-copy"><span class="number">BAGIAN 02 / LATIHAN 1–16</span><h2 id="exercise-heading">Dari sintaks ke pengolahan data.</h2><p>Latihan variabel, template literal, destructuring, class, dan pengolahan array.</p></div><button type="button" id="run-exercises" class="primary">Jalankan 16 latihan</button></div>
+        <div class="output-caption" aria-hidden="true"><span>LATIHAN & TOPIK</span><span>HASIL EKSEKUSI</span></div>
+        <div id="exercise-output" class="output-list" aria-label="Hasil enam belas latihan dasar"></div>
+      </section>
+      <section id="async" class="section" aria-labelledby="async-heading">
+        <div class="section-heading"><div class="section-copy"><span class="number">BAGIAN 03 / LATIHAN 17–22</span><h2 id="async-heading">Amati proses yang berjalan.</h2><p>Fetch, retry, loading, penanganan error, pagination, dan pencarian debounce.</p></div></div>
+        <div class="source-settings"><p class="info-note"><strong>Mulai dengan data lokal.</strong> Berkas JSON lokal dapat dipakai tanpa internet. Pilih API publik untuk mencoba JSONPlaceholder. Kedua sumber tetap menggunakan fetch dan async/await.</p><div class="source-field"><label class="mode-label" for="api-mode">Sumber data latihan</label><select id="api-mode"><option value="local">JSON lokal (tanpa internet)</option><option value="public">API publik · JSONPlaceholder</option></select></div></div>
+        <div class="async-list">
+          <article class="lab-row" aria-labelledby="combined-heading">
+            <div class="lab-copy"><span class="tag">LATIHAN 17 / PARALEL</span><h3 id="combined-heading">Gabungkan beberapa endpoint</h3><p>Ambil users dan posts secara paralel, lalu gabungkan berdasarkan userId.</p><button type="button" id="fetch-combined" class="primary">Ambil & gabungkan</button><p id="combined-status" class="status" role="status"></p></div>
+            <div class="lab-result"><span class="result-label">HASIL PENGGABUNGAN</span><pre id="combined-output">Belum dijalankan.</pre></div>
+          </article>
+          <article class="lab-row" aria-labelledby="retry-heading">
+            <div class="lab-copy"><span class="tag">LATIHAN 18 / RETRY</span><h3 id="retry-heading">Retry & exponential backoff</h3><p>Dua percobaan awal dibuat gagal. Percobaan berikutnya mengambil data lewat fetch.</p><button type="button" id="run-retry" class="primary">Jalankan retry</button><p id="retry-status" class="status" role="status"></p></div>
+            <div class="lab-result"><span class="result-label">URUTAN PERCOBAAN</span><pre id="retry-output">Jeda retry: 200 ms, lalu 400 ms.</pre></div>
+          </article>
+          <article class="lab-row" aria-labelledby="loading-heading">
+            <div class="lab-copy"><span class="tag">LATIHAN 19 / LOADING</span><h3 id="loading-heading">Loading state</h3><p>Tombol dinonaktifkan dan status memuat ditampilkan selama operasi berlangsung.</p><button type="button" id="run-loading" class="primary">Muat data</button><p id="loading-status" class="status" role="status"></p></div>
+            <div class="lab-result"><span class="result-label">DATA PENGGUNA</span><pre id="loading-output">Belum dijalankan.</pre></div>
+          </article>
+          <article class="lab-row" aria-labelledby="error-heading">
+            <div class="lab-copy"><span class="tag">LATIHAN 20 / PENANGANAN ERROR</span><h3 id="error-heading">Batas penanganan error asinkron</h3><p>Error ditangani pada panel ini. Panel latihan lain tetap dapat digunakan.</p><div class="actions"><button type="button" id="run-error" class="secondary">Simulasikan error</button><button type="button" id="recover-error" class="primary">Coba lagi</button></div><p id="error-status" class="status" role="status"></p></div>
+            <div class="lab-result"><span class="result-label">KEGAGALAN & PEMULIHAN</span><pre id="error-output">Coba simulasikan kegagalan lalu muat ulang data.</pre></div>
+          </article>
+          <article class="lab-row" aria-labelledby="pagination-heading">
+            <div class="lab-copy"><span class="tag">LATIHAN 21 / PAGINATION</span><h3 id="pagination-heading">Pagination dengan async/await</h3><p>Setiap halaman memuat 4 catatan. Halaman baru dimuat secara asinkron.</p><div class="pagination-controls"><span id="page-label">Halaman 1 / 3</span><div class="actions"><button type="button" id="previous-page" class="secondary" disabled>← Sebelumnya</button><button type="button" id="next-page" class="primary">Berikutnya →</button></div></div><p id="pagination-status" class="status" role="status"></p></div>
+            <div class="lab-result"><span class="result-label">CATATAN PADA HALAMAN INI</span><div id="pagination-output" class="results"></div></div>
+          </article>
+          <article class="lab-row" aria-labelledby="search-heading">
+            <div class="lab-copy"><span class="tag">LATIHAN 22 / DEBOUNCE</span><h3 id="search-heading">Pencarian API dengan debounce</h3><p>Permintaan berjalan 400 ms setelah mengetik berhenti. Respons lama diabaikan.</p><label for="async-search" class="mode-label">Cari judul catatan</label><input id="async-search" type="search" placeholder="Contoh lokal: JavaScript, tugas, jaringan…" autocomplete="off"><p id="search-status" class="status" role="status"></p></div>
+            <div class="lab-result"><span class="result-label">HASIL PENCARIAN</span><div id="search-output" class="results"></div></div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer><span>Ruang Kuliah<span class="footer-dot">.</span> <span class="footer-divider">/</span> Praktikum PAW · ITERA</span><span>Materi & latihan pertemuan 02 <a href="#main-content">Kembali ke atas ↑</a></span></footer>
+  </div>
+</body>
+</html>
