@@ -1,0 +1,347 @@
+.stats-page {
+  padding-top: 22px;
+}
+.stats-intro {
+  position: relative;
+  overflow: hidden;
+  min-height: 196px;
+  padding: 26px 31px;
+  background: #e8ded0;
+  border-radius: 4px;
+}
+.stats-intro .eyebrow {
+  color: #8f7358;
+}
+.stats-intro h1 {
+  margin: 10px 0 5px;
+  color: #4a3d34;
+  font: 500 38px/0.98 var(--serif);
+  letter-spacing: -0.035em;
+}
+.stats-intro h1 em {
+  color: #9c6d55;
+  font-weight: 400;
+}
+.stats-intro p {
+  max-width: 410px;
+  margin: 10px 0 0;
+  color: #786b60;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.stats-intro-mark {
+  position: absolute;
+  right: 8%;
+  top: 14px;
+  color: #c5a983;
+  font: 180px/0.95 var(--serif);
+  opacity: 0.48;
+  transform: rotate(16deg);
+}
+.stats-overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 13px 0 22px;
+}
+.stat-card {
+  position: relative;
+  min-height: 150px;
+  overflow: hidden;
+  padding: 17px 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+.stat-card-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+}
+.stat-label {
+  position: relative;
+  z-index: 1;
+  color: #908d82;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+.progress-ring {
+  display: grid;
+  place-items: center;
+  width: 82px;
+  height: 82px;
+  margin: 10px 0 5px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #70866a 0 var(--progress),
+    #e8e7df var(--progress) 360deg
+  );
+}
+.progress-ring > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: var(--paper);
+}
+.progress-ring strong {
+  color: var(--ink);
+  font: 500 22px var(--serif);
+}
+.progress-ring small {
+  color: #a09d92;
+  font-size: 8px;
+}
+.stat-foot {
+  display: block;
+  position: relative;
+  z-index: 1;
+  color: #969287;
+  font-size: 9px;
+}
+.big-stat {
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin: 24px 0 5px;
+  color: #465749;
+  font: 500 32px var(--serif);
+}
+.big-stat small {
+  color: #aaa598;
+  font: 11px var(--sans);
+}
+.stat-stars {
+  margin-top: 9px;
+  color: #bd9357;
+  letter-spacing: 2px;
+}
+.favorite-genre {
+  display: block;
+  position: relative;
+  z-index: 1;
+  max-width: 145px;
+  margin: 24px 0 7px;
+  color: #786052;
+  font: 500 22px/1.05 var(--serif);
+}
+.stat-card-symbol {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+  color: #d4d7ca;
+  opacity: 0.65;
+  font-size: 52px;
+}
+.stats-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+.stats-panel {
+  min-height: 255px;
+  padding: 20px 21px 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.panel-heading h2 {
+  margin: 5px 0 0;
+  color: var(--ink);
+  font: 500 21px var(--serif);
+}
+.panel-icon {
+  color: #849176;
+  font-size: 17px;
+}
+.genre-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 22px 0 20px;
+}
+.genre-row {
+  display: grid;
+  grid-template-columns: minmax(100px, 42%) 1fr;
+  align-items: center;
+  gap: 10px;
+}
+.genre-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #66665e;
+  font-size: 10px;
+}
+.genre-name small {
+  margin-left: auto;
+  color: #aaa69b;
+  font-size: 8px;
+}
+.genre-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #788a68;
+}
+.dot-1 {
+  background: #b47565;
+}
+.dot-2 {
+  background: #bd955c;
+}
+.dot-3 {
+  background: #788695;
+}
+.dot-4 {
+  background: #9b758a;
+}
+.bar-track {
+  height: 5px;
+  background: #efeee8;
+  border-radius: 8px;
+}
+.bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #7b8d70;
+}
+.fill-1 {
+  background: #b78070;
+}
+.fill-2 {
+  background: #c2a06a;
+}
+.fill-3 {
+  background: #8495a0;
+}
+.fill-4 {
+  background: #a18094;
+}
+.genre-note {
+  padding: 12px 0 13px;
+  border-top: 1px solid #efede7;
+  color: #989489;
+  font: italic 11px var(--serif);
+}
+.genre-note b {
+  color: #65765f;
+  font-weight: 500;
+}
+.finished-list {
+  margin-top: 14px;
+}
+.finished-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f0eee8;
+}
+.finished-number {
+  color: #b1ab9e;
+  font: italic 13px var(--serif);
+}
+.finished-book {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+.finished-book strong {
+  overflow: hidden;
+  color: #4c4c43;
+  font: 500 14px var(--serif);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.finished-book small {
+  color: #99958a;
+  font-size: 9px;
+}
+.finished-rating {
+  color: #b8894b;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.finished-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 9px 0;
+  color: #939085;
+  font-size: 8px;
+  letter-spacing: 0.09em;
+}
+.finished-total strong {
+  color: #59694f;
+  font: 500 16px var(--serif);
+}
+.finished-total small {
+  color: #a09b8f;
+  font: 9px var(--sans);
+}
+.stats-empty {
+  margin-top: 32px;
+  color: #99958a;
+  font: italic 13px var(--serif);
+}
+.stats-quote {
+  margin: 14px 0 30px;
+  padding: 18px 15px 13px;
+  text-align: center;
+  background: #efede5;
+}
+.stats-quote > span {
+  color: #b49060;
+  font: 42px/0.7 var(--serif);
+}
+.stats-quote p {
+  margin: 3px 0 7px;
+  color: #727164;
+  font: italic 18px var(--serif);
+}
+.stats-quote small {
+  color: #a09d91;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+@media (max-width: 800px) {
+  .stats-overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stats-columns {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .stats-intro {
+    padding: 23px 19px;
+  }
+  .stats-intro h1 {
+    font-size: 33px;
+  }
+  .stats-intro-mark {
+    right: -11%;
+    font-size: 145px;
+  }
+  .stat-card {
+    padding: 14px 12px;
+  }
+  .genre-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

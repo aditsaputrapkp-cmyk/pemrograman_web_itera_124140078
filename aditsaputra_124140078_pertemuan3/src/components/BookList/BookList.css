@@ -1,0 +1,225 @@
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px 18px;
+}
+.book-card {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 22px #362b1c10;
+}
+.cover-wrap {
+  position: relative;
+  height: 162px;
+  padding: 15px 17px;
+  background: #eeeadf;
+}
+.book-cover {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 113px;
+  height: 145px;
+  padding: 11px 10px 9px;
+  color: #fffdf3;
+  box-shadow: 4px 5px 10px #1d1b1930;
+  transform: rotate(-3deg);
+  transition: transform 0.2s;
+}
+.book-card:hover .book-cover {
+  transform: rotate(0deg) translateY(-2px);
+}
+.cover-olive {
+  background: #55684c;
+}
+.cover-rose {
+  background: #a35e53;
+}
+.cover-ochre {
+  background: #aa7836;
+}
+.cover-blue {
+  background: #526b79;
+}
+.cover-plum {
+  background: #76566c;
+}
+.cover-sage {
+  background: #748774;
+}
+.cover-topline {
+  position: relative;
+  z-index: 1;
+  font: 600 6px var(--sans);
+  letter-spacing: 0.12em;
+  opacity: 0.8;
+}
+.cover-title {
+  position: relative;
+  z-index: 1;
+  font: 500 17px/1.05 var(--serif);
+  overflow-wrap: anywhere;
+}
+.cover-rule {
+  width: 25px;
+  height: 1px;
+  margin-top: auto;
+  background: #ffffffab;
+}
+.cover-author {
+  position: relative;
+  z-index: 1;
+  font: 500 7px var(--sans);
+  letter-spacing: 0.04em;
+}
+.cover-mark {
+  position: absolute;
+  right: -6px;
+  bottom: 15px;
+  font-size: 58px;
+  line-height: 1;
+  opacity: 0.12;
+}
+.status-pill {
+  position: absolute;
+  right: 11px;
+  top: 12px;
+  border-radius: 2px;
+  padding: 5px 7px;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+.status-pill.done {
+  background: #e0e9d8;
+  color: #506346;
+}
+.status-pill.reading {
+  background: #f3e5c8;
+  color: #80612d;
+}
+.status-pill.later {
+  background: #eee3e9;
+  color: #80596d;
+}
+.book-info {
+  padding: 13px 14px 11px;
+}
+.book-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: #8b887f;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.book-info h3 {
+  min-height: 38px;
+  margin: 8px 0 1px;
+  color: var(--ink);
+  font: 500 18px/1.14 var(--serif);
+}
+.book-author {
+  margin: 0;
+  color: #77766e;
+  font-size: 11px;
+}
+.book-note {
+  min-height: 31px;
+  margin: 10px 0 0;
+  color: #77756b;
+  font: italic 11px/1.4 var(--serif);
+}
+.book-bottom {
+  min-height: 27px;
+  margin-top: 11px;
+  padding-top: 8px;
+  border-top: 1px solid #efede7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.book-rating {
+  color: #b88742;
+  font-size: 12px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.rating-empty {
+  color: #ddd7c9;
+}
+.not-rated {
+  color: #9b978d;
+  font: 10px var(--sans);
+  letter-spacing: 0;
+}
+.book-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+.book-card:hover .book-actions {
+  opacity: 1;
+}
+.book-actions button {
+  width: 24px;
+  height: 22px;
+  color: var(--muted);
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+.book-actions button:hover {
+  color: var(--green-dark);
+}
+.empty-state {
+  background: var(--paper);
+  border: 1px dashed #d8d2c6;
+  padding: 48px 20px;
+  text-align: center;
+}
+.empty-icon {
+  color: #a6a28f;
+  font-size: 33px;
+}
+.empty-state h3 {
+  margin: 8px 0 5px;
+  font: 500 23px var(--serif);
+}
+.empty-state p {
+  max-width: 390px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+@media (max-width: 1000px) {
+  .book-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 580px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+  .cover-wrap {
+    height: 148px;
+  }
+  .book-cover {
+    height: 132px;
+  }
+}
