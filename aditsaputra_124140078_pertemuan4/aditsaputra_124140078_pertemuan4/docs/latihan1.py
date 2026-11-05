@@ -1,12 +1,15 @@
 
+# Menyiapkan data identitas yang akan ditampilkan.
 nama = "Adit Saputra"
 nim = 124140078
 angkatan = 2024
 minat = "Pengembangan Web"
 
+# Menampilkan identitas dalam satu baris dengan pemisah kolom.
 print("Nama", "NIM", "Angkatan", "Minat Penelitian", sep=" | ")
 print(nama, nim, angkatan, minat, sep=" | ")
 
+# Menyusun isi kartu, lalu merapikan setiap baris agar membentuk kotak.
 lebar = 38
 baris = [
     "KARTU IDENTITAS",
@@ -22,5 +25,6 @@ for isi in baris:
 kartu += "#" * lebar
 print("\n" + kartu)
 
+# Contoh penggunaan tab dan konversi angka NIM menjadi teks.
 print("\nNama:\t" + nama)
 print("NIM:\t" + str(nim))

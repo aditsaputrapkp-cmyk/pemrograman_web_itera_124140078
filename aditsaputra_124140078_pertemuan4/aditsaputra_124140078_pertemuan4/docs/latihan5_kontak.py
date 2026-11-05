@@ -1,4 +1,5 @@
 
+# Penyimpanan kontak menggunakan nama sebagai kunci dan nomor sebagai nilai.
 kontak = {
     "Sobri": "081234567890",
     "Siburi": "082345678901",
@@ -6,18 +7,22 @@ kontak = {
 
 
 def tambah_kontak(nama: str, nomor: str) -> None:
+    # Menambahkan kontak baru atau memperbarui nomor untuk nama yang sama.
     kontak[nama] = nomor
 
 
 def cari_kontak(nama: str) -> str:
+    # Mengembalikan nomor yang ditemukan atau pesan jika nama tidak ada.
     return kontak.get(nama, "Kontak tidak ditemukan")
 
 
 def tampilkan_semua() -> None:
+    # Menampilkan seluruh pasangan nama dan nomor yang tersimpan.
     for nama, nomor in kontak.items():
         print(f"{nama:<10}{nomor}")
 
 
+# Menu berjalan terus hingga pengguna memilih opsi keluar.
 while True:
     print("\n1. Tambah kontak")
     print("2. Cari kontak")
@@ -25,6 +30,7 @@ while True:
     print("4. Keluar")
     pilihan = input("Pilih menu: ")
 
+    # Jalankan aksi sesuai pilihan menu pengguna.
     if pilihan == "1":
         nama_baru = input("Nama: ")
         nomor_baru = input("Nomor telepon: ")

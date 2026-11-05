@@ -1,4 +1,5 @@
 
+# Data nilai tiap mahasiswa; nilai akhir dan grade dihitung oleh program.
 data_mahasiswa = [
     {"nama": "Adit Saputra", "nim": "124140078",
      "nilai_uts": 100, "nilai_uas": 100, "nilai_tugas": 100},
@@ -16,10 +17,12 @@ data_mahasiswa = [
 
 
 def hitung_nilai_akhir(uts: float, uas: float, tugas: float) -> float:
+    # Bobot UTS 30%, UAS 40%, dan tugas 30%.
     return 0.3 * uts + 0.4 * uas + 0.3 * tugas
 
 
 def tentukan_grade(nilai: float) -> str:
+    # Mengubah nilai akhir menjadi grade berdasarkan batas nilai.
     if nilai >= 80:
         return "A"
     elif nilai >= 70:
@@ -32,17 +35,20 @@ def tentukan_grade(nilai: float) -> str:
         return "E"
 
 
+# Menambahkan nilai akhir dan grade ke setiap data mahasiswa.
 for mhs in data_mahasiswa:
     mhs["nilai_akhir"] = hitung_nilai_akhir(
         mhs["nilai_uts"], mhs["nilai_uas"], mhs["nilai_tugas"])
     mhs["grade"] = tentukan_grade(mhs["nilai_akhir"])
 
+# Mencetak tabel ringkasan nilai seluruh mahasiswa.
 print(f"{'Nama':<18}{'NIM':<12}{'Nilai Akhir':>12}{'Grade':>8}")
 print("-" * 50)
 for mhs in data_mahasiswa:
     print(f"{mhs['nama']:<18}{mhs['nim']:<12}"
           f"{mhs['nilai_akhir']:>12.2f}{mhs['grade']:>8}")
 
+# Mencari mahasiswa dengan nilai akhir tertinggi dan terendah.
 tertinggi = max(data_mahasiswa, key=lambda m: m["nilai_akhir"])
 terendah = min(data_mahasiswa, key=lambda m: m["nilai_akhir"])
 
